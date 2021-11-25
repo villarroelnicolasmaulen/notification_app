@@ -17,14 +17,14 @@ class PushNotificationsService {
     // print('onBackground Handler ${message.messageId}');
     print(message.data);
 
-    _messageStream.add(message.notification?.body ?? 'No title');
+    _messageStream.add(message.data['producto'] ?? 'No data');
   }
 
   // cuando está en funcionamiento
   static Future<void> _onMessageHandler( RemoteMessage message) async{
     // print('onMessage Handler ${message.messageId}');
     print(message.data);
-    _messageStream.add(message.notification?.body ?? 'No title');
+    _messageStream.add(message.data['producto'] ?? 'No data');
   }
 
   // cuando está en la APP
@@ -32,7 +32,7 @@ class PushNotificationsService {
     // print('onMessageOpenAppr Handler ${message.messageId}');
     print(message.data);
 
-    _messageStream.add(message.notification?.body ?? 'No title');
+    _messageStream.add(message.data['producto'] ?? 'No data');
   }
 
 
